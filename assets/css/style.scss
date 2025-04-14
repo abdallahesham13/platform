@@ -4,6 +4,7 @@
   --primary-color: #0e4665;
   --main-color: #0d4564;
   --secondary-color: #27a8b8;
+  --title-color: #61d0dd;
   --dark-color: #1d1d35;
   --light-color: #fff;
   --gray-color: #d5dae1;
@@ -648,7 +649,7 @@ header {
       font-size: 18px;
       font-weight: 500;
       margin-bottom: 24px;
-      @include media(){
+      @include media() {
         font-size: 12px;
       }
     }
@@ -660,7 +661,7 @@ header {
       @include media() {
         flex-wrap: wrap;
         gap: 25px;
-        margin-top:30px; 
+        margin-top: 30px;
       }
       .single-card {
         @include flexCenter();
@@ -670,7 +671,7 @@ header {
           width: 68px;
           height: 68px;
           object-fit: contain;
-          @include media(){
+          @include media() {
             width: 34px;
             height: 34px;
           }
@@ -682,7 +683,7 @@ header {
             font-size: 32px;
             font-weight: bold;
             color: var(--light-color);
-            @include media(){
+            @include media() {
               font-size: 22px;
             }
           }
@@ -730,11 +731,7 @@ header {
 .indicators {
   .contain {
     padding: 80px 60px;
-    background: linear-gradient(
-        rgba(54, 190, 209, 0.12),
-        rgba(54, 190, 209, 0.12)
-      ),
-      #0d4564;
+    background-color: rgba($color: #144867, $alpha: 0.7);
     border-radius: 40px;
     position: relative;
     @include media() {
@@ -766,7 +763,7 @@ header {
         color: var(--light-color);
         font-weight: bold;
         span {
-          color: var(--secondary-color);
+          color: var(--title-color);
         }
         @include media() {
           font-size: 24px;
@@ -784,64 +781,64 @@ header {
     }
     .swiper-indicator {
       padding: 30px 0px 60px;
-      .indicator-box {
+    }
+    .indicator-box {
+      width: 100%;
+      padding: 30px 20px;
+      background-color: var(--primary-color);
+      border: 0.5px solid rgba($color: #fff, $alpha: 0.1);
+      border-radius: 16px;
+      transition: all 0.3s linear;
+      @include flexStart();
+      gap: 20px;
+      .image-contain {
+        @include flexCenter();
+        width: 48px;
+        height: 48px;
+        background-color: var(--secondary-color);
+        border-radius: 8px;
+        img {
+          width: 50%;
+          height: 50%;
+          object-fit: contain;
+          filter: var(--light-filter);
+        }
+      }
+      .details-contain {
+        p {
+          font-size: 12px;
+          color: #cad3dd;
+          margin: 0 !important;
+        }
+        h2 {
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--light-color);
+          margin-top: 12px;
+        }
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: var(--secondary-color);
         width: 100%;
-        padding: 30px 20px;
-        background-color: var(--primary-color);
-        border: 0.5px solid rgba($color: #fff, $alpha: 0.1);
+        height: 0%;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
         border-radius: 16px;
         transition: all 0.3s linear;
-        @include flexStart();
-        gap: 20px;
-        .image-contain {
-          @include flexCenter();
-          width: 48px;
-          height: 48px;
-          background-color: var(--secondary-color);
-          border-radius: 8px;
-          img {
-            width: 50%;
-            height: 50%;
-            object-fit: contain;
-            filter: var(--light-filter);
-          }
-        }
-        .details-contain {
-          p {
-            font-size: 12px;
-            color: var(--light-color);
-            margin: 0 !important;
-          }
-          h2 {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--light-color);
-            margin-top: 12px;
-          }
-        }
+      }
+      &:hover {
+        transform: translateY(-10px);
         &::after {
-          content: "";
-          position: absolute;
-          background-color: var(--secondary-color);
-          width: 100%;
-          height: 0%;
-          bottom: 0;
-          left: 0;
-          z-index: -1;
-          border-radius: 16px;
-          transition: all 0.3s linear;
+          height: 100%;
         }
-        &:hover {
-          transform: translateY(-10px);
-          &::after {
-            height: 100%;
-          }
-          .image-contain {
-            background-color: var(--light-color);
-            img {
-              filter: var(--primary-filter);
-              animation: fadeInLeft 0.3s linear both;
-            }
+        .image-contain {
+          background-color: var(--light-color);
+          img {
+            filter: var(--primary-filter);
+            animation: fadeInLeft 0.3s linear both;
           }
         }
       }
@@ -1082,6 +1079,69 @@ header {
           opacity: 1;
         }
       }
+    }
+  }
+}
+
+.analysis {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 85px;
+    background: url("../images/analysis/pattern.svg") bottom left / contain
+      no-repeat;
+    bottom: 25%;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s linear;
+    @include media() {
+      display: none;
+    }
+  }
+}
+.world {
+  .contain {
+    position: relative;
+    .heading {
+      position: relative;
+      z-index: 999;
+      margin-bottom: 20px;
+    }
+    .indicator-box {
+      position: relative;
+      z-index: 999;
+      margin: 20px 0px;
+    }
+    .details-contain {
+      .price {
+        @include flexCenter();
+        gap: 10px;
+        h2 {
+          span {
+            font-size: 14px;
+            font-weight: normal;
+          }
+        }
+        .tax {
+          color: #20a76e !important;
+          font-size: 14px !important;
+          font-weight: normal;
+        }
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url("../images/world/world_pattern.svg") center / contain
+        no-repeat;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      transition: all 0.3s linear;
     }
   }
 }

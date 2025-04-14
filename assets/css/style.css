@@ -694,6 +694,7 @@ button {
   --primary-color: #0e4665;
   --main-color: #0d4564;
   --secondary-color: #27a8b8;
+  --title-color: #61d0dd;
   --dark-color: #1d1d35;
   --light-color: #fff;
   --gray-color: #d5dae1;
@@ -1325,7 +1326,7 @@ header .image-contain .plan {
 
 .indicators .contain {
   padding: 80px 60px;
-  background: linear-gradient(rgba(54, 190, 209, 0.12), rgba(54, 190, 209, 0.12)), #0d4564;
+  background-color: rgba(20, 72, 103, 0.7);
   border-radius: 40px;
   position: relative;
 }
@@ -1340,7 +1341,7 @@ header .image-contain .plan {
   font-weight: bold;
 }
 .indicators .contain .heading h2 span {
-  color: var(--secondary-color);
+  color: var(--title-color);
 }
 @media (max-width: 992px) {
   .indicators .contain .heading h2 {
@@ -1361,7 +1362,7 @@ header .image-contain .plan {
 .indicators .contain .swiper-indicator {
   padding: 30px 0px 60px;
 }
-.indicators .contain .swiper-indicator .indicator-box {
+.indicators .contain .indicator-box {
   width: 100%;
   padding: 30px 20px;
   background-color: var(--primary-color);
@@ -1374,7 +1375,7 @@ header .image-contain .plan {
   justify-content: start;
   gap: 20px;
 }
-.indicators .contain .swiper-indicator .indicator-box .image-contain {
+.indicators .contain .indicator-box .image-contain {
   display: flex;
   align-items: center;
   align-content: center;
@@ -1384,25 +1385,25 @@ header .image-contain .plan {
   background-color: var(--secondary-color);
   border-radius: 8px;
 }
-.indicators .contain .swiper-indicator .indicator-box .image-contain img {
+.indicators .contain .indicator-box .image-contain img {
   width: 50%;
   height: 50%;
   -o-object-fit: contain;
      object-fit: contain;
   filter: var(--light-filter);
 }
-.indicators .contain .swiper-indicator .indicator-box .details-contain p {
+.indicators .contain .indicator-box .details-contain p {
   font-size: 12px;
-  color: var(--light-color);
+  color: #cad3dd;
   margin: 0 !important;
 }
-.indicators .contain .swiper-indicator .indicator-box .details-contain h2 {
+.indicators .contain .indicator-box .details-contain h2 {
   font-size: 20px;
   font-weight: bold;
   color: var(--light-color);
   margin-top: 12px;
 }
-.indicators .contain .swiper-indicator .indicator-box::after {
+.indicators .contain .indicator-box::after {
   content: "";
   position: absolute;
   background-color: var(--secondary-color);
@@ -1414,16 +1415,16 @@ header .image-contain .plan {
   border-radius: 16px;
   transition: all 0.3s linear;
 }
-.indicators .contain .swiper-indicator .indicator-box:hover {
+.indicators .contain .indicator-box:hover {
   transform: translateY(-10px);
 }
-.indicators .contain .swiper-indicator .indicator-box:hover::after {
+.indicators .contain .indicator-box:hover::after {
   height: 100%;
 }
-.indicators .contain .swiper-indicator .indicator-box:hover .image-contain {
+.indicators .contain .indicator-box:hover .image-contain {
   background-color: var(--light-color);
 }
-.indicators .contain .swiper-indicator .indicator-box:hover .image-contain img {
+.indicators .contain .indicator-box:hover .image-contain img {
   filter: var(--primary-filter);
   animation: fadeInLeft 0.3s linear both;
 }
@@ -1679,6 +1680,67 @@ header .image-contain .plan {
 .latest-statistics .swiper-statistics .statistics-box:hover::after {
   height: 100%;
   opacity: 1;
+}
+
+.analysis {
+  position: relative;
+}
+.analysis::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 85px;
+  background: url("../images/analysis/pattern.svg") bottom left/contain no-repeat;
+  bottom: 25%;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s linear;
+}
+@media (max-width: 992px) {
+  .analysis::after {
+    display: none;
+  }
+}
+
+.world .contain {
+  position: relative;
+}
+.world .contain .heading {
+  position: relative;
+  z-index: 999;
+  margin-bottom: 20px;
+}
+.world .contain .indicator-box {
+  position: relative;
+  z-index: 999;
+  margin: 20px 0px;
+}
+.world .contain .details-contain .price {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+}
+.world .contain .details-contain .price h2 span {
+  font-size: 14px;
+  font-weight: normal;
+}
+.world .contain .details-contain .price .tax {
+  color: #20a76e !important;
+  font-size: 14px !important;
+  font-weight: normal;
+}
+.world .contain::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/world/world_pattern.svg") center/contain no-repeat;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  transition: all 0.3s linear;
 }
 
 .footer {
