@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="...." />
@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="assets/css/lib/animate.css" />
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/lib/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
@@ -70,22 +74,22 @@
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link"> أهم المؤشرات</a>
+              <a href="#indicator" class="nav-link"> أهم المؤشرات</a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link">أحدث الاحصائيات </a>
+              <a href="#latest-statistics" class="nav-link">أحدث الاحصائيات </a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link"> أحدث الدراسات </a>
+              <a href="#analysis" class="nav-link"> أحدث الدراسات </a>
             </li>
 
             <li class="nav-item">
-              <a href="#" class="nav-link"> عن المنصة </a>
+              <a href="#about-us" class="nav-link"> عن المنصة </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link"> الأخبار </a>
+              <a href="#latest-news" class="nav-link"> الأخبار </a>
             </li>
             <li class="nav-item hidden-item">
               <a href="#" class="lang">
@@ -105,7 +109,7 @@
                 />
                 <span> English</span>
               </a>
-              <a href="#" class="lang">
+              <a href="login.html" class="lang">
                 <img
                   src="assets/images/icons/user-circle.svg"
                   loading="lazy"
@@ -129,7 +133,7 @@
               <img src="assets/images/icons/globe.svg" loading="lazy" alt="" />
               <span> English</span>
             </a>
-            <a href="#" class="lang">
+            <a href="login.html" class="lang">
               <img
                 src="assets/images/icons/user-circle.svg"
                 loading="lazy"
@@ -231,7 +235,7 @@
         </div>
       </header>
 
-      <section class="indicators general-section">
+      <section class="indicators general-section" id="indicator">
         <div class="container">
           <div class="contain">
             <div class="heading">
@@ -565,7 +569,7 @@
         </div>
       </section>
 
-      <section class="latest-statistics general-section">
+      <section class="latest-statistics general-section" id="latest-statistics">
         <div class="container">
           <div class="title">
             <div class="details">
@@ -751,7 +755,7 @@
         </div>
       </section>
 
-      <section class="fields general-section analysis">
+      <section class="fields general-section analysis" id="analysis">
         <div class="container">
           <div class="title">
             <div class="details">
@@ -1042,7 +1046,7 @@
                     <p>سعر الدولار</p>
                     <div class="price">
                       <h2>12.8993 <span> ر.س</span></h2>
-                      <p class="tax">+7.2%</p>
+                      <p class="tax decrease">-0.5%</p>
                     </div>
                     <p class="date">اخر تحديث 15 يناير 2024</p>
                   </div>
@@ -1108,7 +1112,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-3 col-md-6 col-12 world-box ">
+              <div class="col-lg-3 col-md-6 col-12 world-box">
                 <div class="indicator-box">
                   <div class="image-contain">
                     <img
@@ -1173,7 +1177,7 @@
         </div>
       </section>
 
-      <section class="about-us general-section pattern">
+      <section class="about-us general-section pattern" id="about-us">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-12 mb-3">
@@ -1275,7 +1279,7 @@
         </div>
       </section>
 
-      <section class="latest-news general-section">
+      <section class="latest-news general-section" id="latest-news">
         <div class="container">
           <div class="title">
             <div class="details">
@@ -1400,7 +1404,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 order-mobile-1 contact-box">
               <div class="box-contain">
                 <img
                   src="assets/images/contact/contact_pattern.svg"
@@ -1410,14 +1414,17 @@
               </div>
             </div>
 
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 order-mobile-0 contact-box">
               <form action="" class="form-contain">
                 <div class="row">
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <label for="name"> الاسم الأول <span>*</span></label>
+                      <label for="first-name">
+                        الاسم الأول <span>*</span></label
+                      >
                       <input
                         type="text"
+                        id="first-name"
                         placeholder="ادخل الاسم الأول"
                         class="form-control"
                       />
@@ -1425,9 +1432,12 @@
                   </div>
                   <div class="col-lg-6 col-12">
                     <div class="form-group">
-                      <label for="name"> الاسم الأخير <span>*</span></label>
+                      <label for="last-name">
+                        الاسم الأخير <span>*</span></label
+                      >
                       <input
                         type="text"
+                        id="last-name"
                         placeholder="ادخل الاسم الأخير"
                         class="form-control"
                       />
@@ -1440,6 +1450,7 @@
                       >
                       <input
                         type="text"
+                        id="email"
                         placeholder="ادخل البريد الإلكتروني"
                         class="form-control"
                       />
@@ -1448,9 +1459,9 @@
                   <div class="col-12">
                     <div class="form-group">
                       <label for="phone"> رقم الجوال <span>*</span></label>
-
                       <input
-                        type="text"
+                        type="tel"
+                        id="phone"
                         placeholder="00 000 0000"
                         class="form-control"
                       />
@@ -1458,21 +1469,24 @@
                   </div>
                   <div class="col-12">
                     <div class="form-group text-area">
-                      <label for="textarea">رسالتك <span>*</span></label>
+                      <label for="message">رسالتك <span>*</span></label>
                       <textarea
-                        name=""
+                        id="message"
                         placeholder="نص تلميحي"
                         class="form-control"
-                        id=""
                       ></textarea>
                     </div>
                   </div>
                   <div class="col-12">
                     <div class="policy">
                       <div class="wrapper">
-                        <input type="checkbox" class="check checkbox" />
+                        <input
+                          type="checkbox"
+                          id="policy-check"
+                          class="check checkbox"
+                        />
                       </div>
-                      <p>
+                      <p class="policy-desc">
                         بتقديمك هذا النموذج، فإنك توافق على استخدام معلوماتك
                         وفقًا لـ <a href="#">سياسة الخصوصية</a> و
                         <a href="#">شروط الاستخدام </a>
@@ -1634,6 +1648,7 @@
     <script src="assets/js/lib/popper.js"></script>
     <script src="assets/js/lib/bootstrap.js"></script>
     <script src="assets/js/lib/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

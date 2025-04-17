@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="...." />
@@ -17,22 +17,21 @@
     <link rel="stylesheet" href="assets/css/lib/animate.css" />
     <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/lib/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"
+    />
+
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
     <main>
       <header class="register-header">
-        <div class="row w-100">
-          <div class="col-lg-7 col-12 mb-3 order-mobile-0">
+        <div class="row m-0">
+          <div class="col-lg-7 col-12 mb-3 order-mobile-0 register-card">
             <nav class="login-navbar">
               <div class="container">
                 <div class="contain">
-                  <div class="hamburger">
-                    <span class="line"></span>
-                    <span class="line"></span>
-                    <span class="line"></span>
-                  </div>
-
                   <a href="index.html" class="brand-name">
                     <img
                       src="assets/images/logo/logo.svg"
@@ -44,14 +43,11 @@
 
                   <ul class="login-navbar-nav">
                     <li class="nav-item hidden-item">
-                      <a href="#" class="lang">
-                        <img
-                          src="assets/images/icons/search.svg"
-                          class="search-img"
-                          loading="lazy"
-                          alt=""
-                        />
-                        <span>البحث</span>
+                      <a
+                        href="login.html"
+                        class="custom-btn primary-btn login-btn"
+                      >
+                        <span> تسجيل الدخول</span>
                       </a>
                       <a href="#" class="lang">
                         <img
@@ -59,21 +55,16 @@
                           loading="lazy"
                           alt=""
                         />
-                        <span> English</span>
-                      </a>
-                      <a href="#" class="lang">
-                        <img
-                          src="assets/images/icons/user-circle.svg"
-                          loading="lazy"
-                          alt=""
-                        />
-                        <span> تسجيل الدخول</span>
+                        <span> En</span>
                       </a>
                     </li>
                   </ul>
                   <div class="button-contain">
-                    <span class="text">ليس لديك حساب ؟</span>
-                    <a href="#" class="custom-btn primary-btn login-btn">
+                    <span class="text"> لديك حساب ؟</span>
+                    <a
+                      href="login.html"
+                      class="custom-btn primary-btn login-btn"
+                    >
                       <span> تسجيل الدخول</span>
                     </a>
                     <a href="#" class="lang">
@@ -96,9 +87,11 @@
               <div class="row">
                 <div class="col-lg-6 col-12">
                   <div class="form-group">
-                    <label for="name"> الاسم الأول <span>*</span></label>
+                    <label for="first_name"> الاسم الأول <span>*</span></label>
                     <input
                       type="text"
+                      id="first_name"
+                      name="first_name"
                       placeholder="ادخل الاسم الأول"
                       class="form-control"
                     />
@@ -106,9 +99,11 @@
                 </div>
                 <div class="col-lg-6 col-12">
                   <div class="form-group">
-                    <label for="name"> الاسم الأخير <span>*</span></label>
+                    <label for="last_name"> الاسم الأخير <span>*</span></label>
                     <input
                       type="text"
+                      id="last_name"
+                      name="last_name"
                       placeholder="ادخل الاسم الأخير"
                       class="form-control"
                     />
@@ -119,6 +114,8 @@
                     <label for="email"> البريد الإلكتروني <span>*</span></label>
                     <input
                       type="text"
+                      id="email"
+                      name="email"
                       placeholder="ادخل البريد الإلكتروني"
                       class="form-control"
                     />
@@ -127,47 +124,81 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label for="phone"> رقم الجوال <span>*</span></label>
-
                     <input
-                      type="text"
+                      type="tel"
+                      id="phone"
+                      name="phone"
                       placeholder="00 000 0000"
                       class="form-control"
                     />
                   </div>
                 </div>
                 <div class="col-12">
-                  <div class="form-group">
-                    <label for="phone"> كلمة المرور <span>*</span></label>
-
+                  <div class="form-group show_hide_password">
+                    <label for="password"> كلمة المرور <span>*</span></label>
                     <input
                       type="password"
+                      id="password"
+                      name="password"
                       placeholder="ادخل كلمة المرور"
                       class="form-control"
                     />
+                    <a href="#" class="show-pass active">
+                      <img
+                        src="assets/images/icons/eye-on.svg"
+                        class="icon"
+                        loading="lazy"
+                        alt=""
+                      />
+                      <img
+                        src="assets/images/icons/eye-off.svg"
+                        class="slash-icon"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </a>
                   </div>
                 </div>
                 <div class="col-12">
-                  <div class="form-group">
-                    <label for="phone"> تأكيد كلمة المرور <span>*</span></label>
-
+                  <div class="form-group show_hide_password">
+                    <label for="confirm_password">
+                      تأكيد كلمة المرور <span>*</span></label
+                    >
                     <input
                       type="password"
+                      id="confirm_password"
+                      name="confirm_password"
                       placeholder="تأكيد كلمة المرور"
                       class="form-control"
                     />
+                    <a href="#" class="show-pass active">
+                      <img
+                        src="assets/images/icons/eye-on.svg"
+                        class="icon"
+                        loading="lazy"
+                        alt=""
+                      />
+                      <img
+                        src="assets/images/icons/eye-off.svg"
+                        class="slash-icon"
+                        loading="lazy"
+                        alt=""
+                      />
+                    </a>
                   </div>
                 </div>
                 <div class="col-12">
                   <a
-                    href="#"
+                    href="index.html"
                     type="button"
                     class="custom-btn primary-btn submit"
                   >
-                    <span> إرسال </span>
+                    <span> انشأ حساب جديد </span>
                   </a>
                 </div>
               </div>
             </form>
+
             <p>او سجل من خلال</p>
             <ul class="social">
               <li>
@@ -206,7 +237,7 @@
               </li>
             </ul>
 
-            <div class="copyrights">
+            <div class="copyrights web">
               <p>
                 جميع الحقوق محفوظة لـ شركة تقنيات القمم
                 <img
@@ -218,13 +249,30 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-5 col-12 mb-3 order-mobile-1 p-0">
+          <div class="col-lg-5 col-12 mb-3 order-mobile-1 p-0 register-card">
             <div class="image-contain">
+              <img
+                src="assets/images/register/login-bg.svg"
+                class="login-bg"
+                loading="lazy"
+                alt=""
+              />
               <div class="desc">
                 <h2> اكتشف اهم وادق المؤشرات الاقتصادية بمنصة واحدة</h2>
                 <p>
                   كل الإحصائيات والبيانات التي تحتاجها لاتخاذ قراراتك الصعبة
                   اصبحت بين يديك الآن
+                </p>
+              </div>
+              <div class="copyrights mobile">
+                <p>
+                  جميع الحقوق محفوظة لـ شركة تقنيات القمم
+                  <img
+                    src="assets/images/footer/q_login.svg"
+                    loading="lazy"
+                    alt=""
+                  />
+                  © 2025
                 </p>
               </div>
             </div>
@@ -236,6 +284,8 @@
     <script src="assets/js/lib/popper.js"></script>
     <script src="assets/js/lib/bootstrap.js"></script>
     <script src="assets/js/lib/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>

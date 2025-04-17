@@ -53,6 +53,12 @@ html[dir="ltr"] {
     }
   }
 }
+@mixin ltr {
+  html[dir="ltr"] & {
+    @content;
+  }
+}
+
 body {
   background-color: #002141;
 }
@@ -189,6 +195,11 @@ button {
     right: unset !important;
     left: 11% !important;
   }
+
+  @include ltr() {
+    left: unset !important;
+    right: 14% !important;
+  }
 }
 .swiper-button-next {
   top: unset;
@@ -197,6 +208,10 @@ button {
   @media (max-width: 1366px) {
     right: unset !important;
     left: 15% !important;
+  }
+  @include ltr() {
+    left: unset !important;
+    right: 10% !important;
   }
 }
 .swiper-button-next {

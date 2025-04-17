@@ -29,13 +29,6 @@ $(document).ready(function () {
     $("body").toggleClass("overflowNone");
   });
 
-  $(".cart").click(function () {
-    $(".cart-nav").toggleClass("active");
-  });
-
-  $(".cart-nav .close-cart").click(function () {
-    $(".cart-nav").removeClass("active");
-  });
   var swiper = new Swiper(".swiper-indicator", {
     spaceBetween: 10,
     loop: true,
@@ -65,10 +58,10 @@ $(document).ready(function () {
         slidesPerView: 2,
         spaceBetween: 18,
       },
-      1080:{
+      1080: {
         slidesPerView: 4,
         spaceBetween: 18,
-      }
+      },
     },
   });
   var swiper = new Swiper(".swiper-fields", {
@@ -103,10 +96,10 @@ $(document).ready(function () {
         slidesPerView: 2,
         spaceBetween: 18,
       },
-      1080:{
+      1080: {
         slidesPerView: 4,
         spaceBetween: 18,
-      }
+      },
     },
   });
   var swiper = new Swiper(".swiper-statistics", {
@@ -141,10 +134,36 @@ $(document).ready(function () {
         slidesPerView: 2,
         spaceBetween: 18,
       },
-      1080:{
-        slidesPerView: 4,
+      1080: {
+        slidesPerView: 3,
         spaceBetween: 18,
-      }
+      },
     },
   });
+
+  $(".show-pass").on("click", function (event) {
+    event.preventDefault();
+
+    $(this).toggleClass("active");
+  });
+
+  $(".show_hide_password .show-pass").on("click", function (event) {
+    event.preventDefault();
+    if ($(this).siblings("input").attr("type") == "text") {
+      $(this).siblings("input").attr("type", "password");
+    } else if ($(this).siblings("input").attr("type") == "password") {
+      $(this).siblings("input").attr("type", "text");
+    }
+  });
+
+  const phoneInputField = document.querySelector("#phone");
+
+  if (phoneInputField) {
+    const iti = window.intlTelInput(phoneInputField, {
+      initialCountry: "sa",
+      separateDialCode: true,
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+    });
+  }
 });
