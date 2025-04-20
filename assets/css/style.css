@@ -1819,6 +1819,7 @@ html[dir=rtl] .register-header .form-group .form-control {
 }
 .register-header .image-contain {
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   padding: 130px 0px 0px 0px;
   background: linear-gradient(to right, rgba(58, 198, 215, 0.2), rgba(17, 111, 145, 0.1)), #002141;
