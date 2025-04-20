@@ -1050,17 +1050,6 @@ html[dir=ltr] .custom-btn:hover img {
     right: unset;
     left: 0%;
   }
-  .navbar .contain .navbar-nav::after, .navbar .contain .navbar-nav::before {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 40%;
-    z-index: -1;
-    bottom: 0;
-    left: 0;
-    background: url("../images/icons/top_pattern.svg") top left/contain no-repeat;
-    animation: bottomClip 4s linear infinite alternate;
-  }
   .navbar .contain .navbar-nav::before {
     right: 0px;
     left: unset;
